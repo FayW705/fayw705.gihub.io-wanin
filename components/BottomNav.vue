@@ -108,7 +108,6 @@
     methods: {
       toggleDrawer() {
         this.drawer = !this.drawer;
-        console.log('toggle')
       },
       goToProfile() {
         // 導航到個人頁面
@@ -120,7 +119,6 @@
         // 導航到設定頁面
       },
       selectItem(item) {
-        console.log('選擇的項目: ', item.title);
         this.drawer = false; // 點擊後關閉抽屜
       },
     },
@@ -140,9 +138,9 @@
     }
     .close-button {
     position: absolute !important;
-    top: 0px; /* 調整為你需要的距離 */
-    right: 0px; /* 調整為你需要的距離 */
-    z-index: 1001; /* 確保關閉按鈕在抽屜之上 */
+    top: 0px; 
+    right: 0px; 
+    z-index: 1001; 
     }
     .v-list-item__content {
         padding: 0;

@@ -89,11 +89,9 @@ export default {
     playGame(index) {
     const game = this.game[index];
     this.storePlayedGame(game);
-    console.log('已開始遊玩：', game.title);
     
     // 確認觸發事件
     this.$root.$emit('updatePlayedGames');
-    console.log('觸發了 updatePlayedGames 事件');
   },
   storePlayedGame(game) {
   const playedGames = JSON.parse(localStorage.getItem('playedGames')) || [];
@@ -107,12 +105,9 @@ export default {
   
   // 將新遊戲放到陣列的最前面
   playedGames.unshift({ id: game.id, title: game.title });
-  
-  // 存儲遊玩的遊戲到 localStorage
   localStorage.setItem('playedGames', JSON.stringify(playedGames));
   },
   updatePlayedGames() {
-    // 通知 played.vue 更新遊玩過的資料
     this.$root.$emit('updatePlayedGames');
   }
   }
